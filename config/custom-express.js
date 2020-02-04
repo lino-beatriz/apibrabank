@@ -17,16 +17,16 @@ customExpress = () => {
 
     // Incluindo todos os arquivos que esta na pasta controllers dentro da const 'app'
     consign()
-        .include('controllers')
-        .include('models')
-        .into(app)
+        .include('controllers/public')
+        .then('middlewares')
+        .then('controllers')
+        .then('models')
+        .into(app)  
 
         return app
 }
 
 module.exports = customExpress() 
-
-
 
 
 /******************** EXEMPLOS ************************* */
