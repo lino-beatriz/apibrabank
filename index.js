@@ -1,5 +1,5 @@
 // Importando
-const app = require('./config/custom-express')
+const app = require('./src/server')
 
 // Subindo o servidor
 app.listen(3000, ()=>{

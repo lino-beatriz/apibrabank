@@ -1,8 +1,7 @@
 const jwt = require('jsonwebtoken')
 const auth = require('../config/auth')
 
-module.exports = (app) => {
-    app.use(async (req,res,next) => {
+module.exports = async (req,res,next) => {
         const authHeader = req.headers.authorization 
     
         // Verifica se tem autorização no header
@@ -32,5 +31,4 @@ module.exports = (app) => {
         }catch(erro){
             res.status(401).send({erro: 'Token inválido'})
         }
-    })
-}
+    }
